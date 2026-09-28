@@ -3,6 +3,11 @@
 
 # Bastion of Blasphemy: Addons
 
+## Quality Settings for Bad PCs
+- Turn Graphics to low (10 fps to 30 fps)
+- Play with the Foundry Lightweight Client (went from 30  fps to 50 fps)
+- Turn off Token Vision Animation (From 50 fps to 90fps)
+- Turning off token vision animation also helped with stuttering when moving PC tokens
 
 ## Music Recommendations
 ### General Playlists or Albums
