@@ -17,6 +17,8 @@
 - [Overclocked Remix Vampire Variations Album](https://www.youtube.com/watch?v=TDfFmrW-uv8&list=PLWk40K1PeZwFeiMIJvyontqYUmU1Qvmdi) _Cori McCreery_
 - [Crimson Peak](https://www.youtube.com/watch?v=zRi9KgffL3A&list=PLzhk329J-YhLv9vVARIu5njKbE6Y3Syjj) - _Chasarooni_ to fit with the gothic horror vibes
 - [Resident Evil 8](https://www.youtube.com/playlist?list=PLF_YkLE71wx67dntC9O09tdvfuporFItL) - _Chasarooni_ Gothic Horror vibes
+- [Curse of Strahd OST - Travis Savoie](https://www.youtube.com/playlist?list=PLpV28ONBH95Rwoucn0cyCwJcRM7sNT_G5) - _Chasarooni_ Gothic Horror vibes
+- [Shadows of Barovia](https://www.youtube.com/playlist?list=PLpV28ONBH95RcvBiJFB8OSfyVkyM4uZ2) - _Chasarooni_
 
 ### Landing Page
 - [RE: Remake - Save Room](https://youtu.be/4pZV3UPmXI4) _Sharrakor_
