@@ -1,12 +1,12 @@
 {
-  "id": "module",
-  "title": "New Module",
-  "description": "",
+  "id": "bob-addons",
+  "title": "Bastion of Blasphemies: Addons",
+  "description": "Addons for Bastions of Blasphemies or is it Bastion of Blasphemies one can never remember",
   "version": "#{VERSION}#",
   "library": "false",
   "compatibility": {
-    "minimum": 12,
-    "verified": 12
+    "minimum": 14,
+    "verified": 14
   },
   "authors": [
     {
@@ -16,18 +16,27 @@
     }
   ],
   "relationships": {
-    "systems": [],
-    "requires": []
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "manifest": "https://github.com/foundryvtt/pf2e/releases/download/latest/system.json"
+      }
+    ],
+    "requires": [
+      {
+        "id": "sequencer",
+        "type": "module",
+        "manifest": "https://github.com/fantasycalendar/FoundryVTT-Sequencer/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "3.0.0"
+        }
+      }
+    ]
   },
-  "esmodules": [
-    "scripts/module.js"
-  ],
-  "scripts": [
-    "scripts/lib/lib.js"
-  ],
-  "styles": [
-    "styles/module.css"
-  ],
+  "esmodules": ["scripts/module.js"],
+  "scripts": ["scripts/lib/lib.js"],
+  "styles": ["styles/module.css"],
   "languages": [
     {
       "lang": "en",
@@ -39,11 +48,5 @@
   "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",
   "license": "LICENSE",
-  "readme": "README.md",
-  "media": [
-    {
-      "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
-    }
-  ]
+  "readme": "README.md"
 }

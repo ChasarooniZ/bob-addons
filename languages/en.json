@@ -1,3 +1,26 @@
 {
-    "MODULE.hello": "hello"
+  "bob-addons": {
+    "animation": {
+      "location-title": {
+        "titles": {
+          "custom": "Custom Input",
+          "bastion-of-blasphemies": "Bastion of |Blasphemies",
+          "the-haunted-shore": "The Haunted Shore",
+          "castle-grounds": "Castle Grounds",
+          "the-cellars": "The Cellars",
+          "the-reception-hall": "The Reception Hall",
+          "the-dungeon": "The Dungeon",
+          "the-private-halls": "The Private Halls",
+          "the-fallen-temple": "The Fallen Temple",
+          "the-vault": "The Vault",
+          "the-towers": "The Towers"
+        },
+        "fun-titles": {
+          "1": "Blasphemies of Bastions",
+          "2": "Bastions of Blasphemy"
+        },
+        "title": "Choose an area to show the Animation for"
+      }
+    }
+  }
 }
