@@ -21,6 +21,7 @@
 - [Resident Evil 8](https://www.youtube.com/playlist?list=PLF_YkLE71wx67dntC9O09tdvfuporFItL) - _Chasarooni_ Gothic Horror vibes
 - [Curse of Strahd OST - Travis Savoie](https://www.youtube.com/playlist?list=PLpV28ONBH95Rwoucn0cyCwJcRM7sNT_G5) - _Chasarooni_ Gothic Horror vibes
 - [Shadows of Barovia](https://www.youtube.com/playlist?list=PLpV28ONBH95RcvBiJFB8OSfyVkyM4uZ2) - _Chasarooni_
+- [Claws of the Tyrant](https://www.youtube.com/watch?v=LM3V4VIFJeU&list=OLAK5uy_kgwv5cVye1Z5Fn94Rx8rLdZlYGsPR90S4) - _IanKid_ - Maybe usable as it takes place nearby
 
 ### Landing Page
 
