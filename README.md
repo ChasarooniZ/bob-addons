@@ -1,16 +1,18 @@
 ![](https://img.shields.io/badge/Foundry-v14-informational)
 
-
 # Bastion of Blasphemy: Addons
 
 ## Quality Settings for Bad PCs
+
 - Turn Graphics to low (10 fps to 30 fps)
-- Play with the Foundry Lightweight Client (went from 30  fps to 50 fps)
+- Play with the Foundry Lightweight Client (went from 30 fps to 50 fps)
 - Turn off Token Vision Animation (From 50 fps to 90fps)
 - Turning off token vision animation also helped with stuttering when moving PC tokens
 
 ## Music Recommendations
+
 ### General Playlists or Albums
+
 - [Myth-speaker Hater list](https://www.youtube.com/playlist?list=PLKDkfiCifBU4) - _Myth-Speaker Hater_
 - [Dracula X OST](https://www.youtube.com/watch?v=EfnCMqTAqcY&list=PL5CA2C0AF0CBCEB05) - _Ambrose_
 - [Hollow Knight](https://www.youtube.com/watch?v=243Uguc-6mQ&list=PLmOldskd2VbL7_t-NE9p6rEboq_v0AHko)
@@ -21,21 +23,39 @@
 - [Shadows of Barovia](https://www.youtube.com/playlist?list=PLpV28ONBH95RcvBiJFB8OSfyVkyM4uZ2) - _Chasarooni_
 
 ### Landing Page
+
 - [RE: Remake - Save Room](https://youtu.be/4pZV3UPmXI4) _Sharrakor_
 
 ### Random Encounters
+
 - [Battle with Catwoman](https://www.youtube.com/watch?v=mfQDSuByWUs&t=576s) _Ambrose_
 
 ### First Area
+
 - [Crossroads](https://www.youtube.com/watch?v=eX4de4BH5lM&list=RDeX4de4BH5lM&start_radio=1) _Ambrose_
+
 ### The Temple
+
 - [Soul Sanctum](https://www.youtube.com/watch?v=pvpCX9qtyZE) _Ambrose_
 
 ### Ballroom
+
 - [Aria of Sorrow](https://youtu.be/jPuLrQSGU2E?si=_pfHm5rt6780hzm9) _Myth-Speaker Hater_
 
-
 ## Licensing
-**SFX**
- - Metallic Sting by BennettFilmTeacher -- https://freesound.org/s/594989/ -- License: Creative Commons 0
- - Cello Section - tremolo - F#4 (trem_G3_v2_1.wav) by sgossner -- https://freesound.org/s/372865/ -- License: Creative Commons 0
+
+### SFX
+
+- Metallic Sting by BennettFilmTeacher -- https://freesound.org/s/594989/ -- License: Creative Commons 0
+- Cello Section - tremolo - F#4 (trem_G3_v2_1.wav) by sgossner -- https://freesound.org/s/372865/ -- License: Creative Commons 0
+
+### UI Elements
+
+- Hollow Knight Bob Bot/Top - Created by @Chasarooni, License, Creative Commons with Attribution
+
+### CUP
+
+Thhis module uses trademarks and/or copyrights owned by
+Paizo Inc., used under Paizo’s Community Use Policy (paizo.com/licenses/communityuse). We are expressly
+prohibited from charging you to use or access this content. This Module is not published, endorsed, or specifically approved by Paizo. For more information about Paizo Inc. and
+Paizo products, visit paizo.com.
