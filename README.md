@@ -33,3 +33,8 @@
 
 ### Ballroom
 - [Aria of Sorrow](https://youtu.be/jPuLrQSGU2E?si=_pfHm5rt6780hzm9) _Myth-Speaker Hater_
+
+
+## Licensing
+**SFX**
+ - Metallic Sting by BennettFilmTeacher -- https://freesound.org/s/594989/ -- License: Creative Commons 0
