@@ -44,6 +44,20 @@
       "path": "languages/en.json"
     }
   ],
+  "packs": [
+    {
+      "name": "bob-addons-macros",
+      "label": "Bastion of Blasphemies: Addons Macros",
+      "path": "packs/bob-addons-macros",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "pf2e",
+      "flags": {}
+    }
+  ],
   "url": "#{URL}#",
   "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",

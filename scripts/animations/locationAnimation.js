@@ -1,4 +1,4 @@
-import { MODULE_ID } from "../module";
+import { MODULE_ID } from "../module.js";
 
 const effectAnchor = { x: 0.5, y: 0.4 };
 
