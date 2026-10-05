@@ -38,3 +38,4 @@
 ## Licensing
 **SFX**
  - Metallic Sting by BennettFilmTeacher -- https://freesound.org/s/594989/ -- License: Creative Commons 0
+ - Cello Section - tremolo - F#4 (trem_G3_v2_1.wav) by sgossner -- https://freesound.org/s/372865/ -- License: Creative Commons 0
