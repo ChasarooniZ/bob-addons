@@ -27,7 +27,10 @@
         },
         "title": "Choose an area to show the Animation for",
         "hours-until-night": "{hours} Hours until Nightfall",
-        "do-time-to-night": "Show Time to Nightfall Subtitle?"
+        "hours-until-dawn": "{hours} Hours until Dawn",
+        "endless-night": "The Night Never Ends",
+        "do-time-to-night": "Show Time to Nightfall Subtitle?",
+        "do-time-to-dawn": "Show Time to Dawn Subtitle?"
       }
     }
   }

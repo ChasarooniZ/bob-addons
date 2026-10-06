@@ -20,6 +20,17 @@ export function setupHooks() {
           item?.delete();
         }
       });
+      Hooks.on("deleteCombat", (encounter) => {
+        if (isNight()) {
+          for (const combatant of encounter?.combatants?.contents ?? []) {
+            const actor = combatant?.actor;
+            const item = actor?.items?.contents?.find(
+              (i) => i?.system?.slug === "effect-nightfall",
+            );
+            item?.delete();
+          }
+        }
+      });
     }
   }
 }

@@ -1,4 +1,9 @@
-import { timeTillNightFall } from "../lib/timeHelpers.js";
+import {
+  isEndlessNight,
+  isNight,
+  timeTillDawn,
+  timeTillNightFall,
+} from "../lib/timeHelpers.js";
 import { MODULE_ID } from "../module.js";
 
 const effectAnchor = { x: 0.5, y: 0.4 };
@@ -20,6 +25,7 @@ export async function locationAnimation({ animScale = 1 }) {
   const custom = game.i18n.localize(
     "bob-addons.animation.location-title.titles.custom",
   );
+  const isNightTime = isNight();
 
   const optionsHTML = getOptionsHTML(custom);
 
@@ -27,8 +33,8 @@ export async function locationAnimation({ animScale = 1 }) {
     window: { title: "bob-addons.animation.location-title.title" },
     content: `${optionsHTML}<input type="text" name="custom">
     <div>
-      <input type="checkbox" id="timeToNightfall" name="timeToNightfall" />
-      <label for="timeToNightfall">${game.i18n.localize("bob-addons.animation.location-title.do-time-to-night")}</label>
+      <input type="checkbox" id="timeTo" name="timeTo" />
+      <label for="timeTo">${game.i18n.localize(isNightTime ? "bob-addons.animation.location-title.do-time-to-dawn" : "bob-addons.animation.location-title.do-time-to-night")}</label>
     </div>`,
     ok: {
       label: "SEQUENCER.SidebarButtons.Play",
@@ -44,7 +50,7 @@ export async function locationAnimation({ animScale = 1 }) {
     text = text.split("/")?.[0]?.trim();
   }
 
-  const addSubtitle = data?.timeToNightfall;
+  const addSubtitle = data?.timeTo;
 
   const textTop = ` ${text.split("|")?.[0]?.trim()} `;
   const textBottom = text.split("|")?.[1]
@@ -84,8 +90,8 @@ export async function locationAnimation({ animScale = 1 }) {
     (Number(addSubtitle || !!subtitle) * (lineHeight * subtitleScale)) / 2;
 
   const subtitleOffsetY = textBottom
-    ? textOffset + lineHeight / 2
-    : -textOffset + lineHeight / 2;
+    ? textOffset + subtitleOffsetForBottom * 0.3 + lineHeight / 2
+    : -textOffset + subtitleOffsetForBottom * 0.3 + lineHeight / 2;
 
   const bottomOffsetY = textBottom
     ? subtitleOffsetForBottom + textOffset + lineHeight / 2
@@ -150,9 +156,16 @@ export async function locationAnimation({ animScale = 1 }) {
       .screenSpacePosition({ x: 0, y: textOffset });
   }
   if (addSubtitle || !!subtitle) {
-    const hours = Math.round(timeTillNightFall());
+    const hours = Math.round(
+      isNightTime ? timeTillDawn() : timeTillNightFall(),
+    );
+
+    const dawnOrNight = isNightTime ? "dawn" : "night";
+
     const sub = ` ${game.i18n.format(
-      "bob-addons.animation.location-title.hours-until-night",
+      isEndlessNight()
+        ? "bob-addons.animation.location-title.endless-night"
+        : `bob-addons.animation.location-title.hours-until-${dawnOrNight}`,
       { hours },
     )} `;
     seq
