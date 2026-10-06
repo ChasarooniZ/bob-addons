@@ -1,3 +1,12 @@
+## 0.2.2
+
+- **Updated**
+  - `Automatically Add Nightfall Effect`
+    - Fixed issue with effect not being removed on end of combat
+  - `Title Animation`
+    - Added time till `Dawn` & a `The Night Never Ends` subtitle
+    - Adjusted subtitle position a little
+
 ## 0.2.1
 
 - Actually included a setting check for `Automatically Add Nightfall Effect`
