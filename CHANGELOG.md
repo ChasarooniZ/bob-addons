@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Actually included a setting check for `Automatically Add Nightfall Effect`
+
 ## 0.2.0
 
 - **New**

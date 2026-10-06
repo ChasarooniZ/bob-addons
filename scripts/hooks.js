@@ -1,8 +1,9 @@
 import { EFFECT } from "./lib/const.js";
 import { isNight } from "./lib/timeHelpers.js";
+import { MODULE_ID } from "./module.js";
 
 export function setupHooks() {
-  if (true) {
+  if (game.settings.get(MODULE_ID, "apply-nightfall-effect")) {
     if (game.user.isGM) {
       Hooks.on("createCombatant", async (combatant) => {
         if (isNight()) {
