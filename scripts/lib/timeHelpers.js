@@ -8,7 +8,7 @@ export function isNight() {
 
   return currentTime >= duskTime || currentTime <= dawnTime;
 }
-
+2
 export function timeTillNightFall() {
   if (isNight()) {
     return 0;
@@ -26,7 +26,7 @@ export function timeTillDawn() {
     const { hour, minute } = getTime();
     const { dawn } = getDawnDuskData();
     return (
-      (dawn.hour > hour ? 24 : 0) +
+      (dawn.hour < hour ? 24 : 0) +
       (dawn.hour + dawn.minute / 60) -
       (hour + minute / 60)
     );
