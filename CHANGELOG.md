@@ -6,7 +6,7 @@
 - **Update**
   - `Title Animation`
     - Fixed localization of `Custom` location title
-    - Added a toggle to automatically add a time till X subtitle
+    - Added a toggle to automatically show hours till nightfall
     - Also added support for `|` to split it into two lines, and `/` to add a custom subtitle as any other custom text
 
 ## 0.1.1
