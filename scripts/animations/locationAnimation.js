@@ -1,3 +1,4 @@
+import { timeTillNightFall } from "../lib/timeHelpers.js";
 import { MODULE_ID } from "../module.js";
 
 const effectAnchor = { x: 0.5, y: 0.4 };
@@ -17,11 +18,160 @@ const borderTint = "#BCAA58";
 export async function locationAnimation({ animScale = 1 }) {
   // TODO make this trigger on location of highlighted token otherwise ask you to selection
   const custom = game.i18n.localize(
-    "bob-addons.animation.location-title.title.custom",
+    "bob-addons.animation.location-title.titles.custom",
   );
 
-  // Random chance for Bastion of Blasphemies to be Blasphemy of Bastions randomly or Bastions of Blasphemies
+  const optionsHTML = getOptionsHTML(custom);
 
+  const data = await foundry.applications.api.DialogV2.input({
+    window: { title: "bob-addons.animation.location-title.title" },
+    content: `${optionsHTML}<input type="text" name="custom">
+    <div>
+      <input type="checkbox" id="timeToNightfall" name="timeToNightfall" />
+      <label for="timeToNightfall">${game.i18n.localize("bob-addons.animation.location-title.do-time-to-night")}</label>
+    </div>`,
+    ok: {
+      label: "SEQUENCER.SidebarButtons.Play",
+      icon: "fa-solid fa-play",
+    },
+  });
+  let text = data?.choice === custom ? data?.custom : data?.choice;
+
+  const subtitle = text.split("/")?.[1]
+    ? ` ${text.split("/")?.[1]?.trim()} `
+    : false;
+  if (subtitle) {
+    text = text.split("/")?.[0]?.trim();
+  }
+
+  const addSubtitle = data?.timeToNightfall;
+
+  const textTop = ` ${text.split("|")?.[0]?.trim()} `;
+  const textBottom = text.split("|")?.[1]
+    ? ` ${text.split("|")?.[1]?.trim()} `
+    : false;
+
+  const style = {
+    fill: "#BDA536",
+    fontFamily: "PopplFrakturCAT",
+    lineJoin: "round",
+    fontSize: 96 * animScale,
+    fontWeight: "bold",
+    strokeThickness: 8,
+  };
+
+  const subtitleScale = 0.6;
+
+  const subtitleStyle = foundry.utils.mergeObject(
+    foundry.utils.deepClone(style),
+    {
+      fontSize: style.fontSize * subtitleScale,
+      fill: "#8E7C29",
+    },
+  );
+
+  const textMetrics = PIXI.TextMetrics.measureText(
+    text,
+    new PIXI.TextStyle(style),
+  );
+  const lineHeight = textMetrics.height;
+
+  const textOffset = lineHeight * 0.3;
+
+  const scale = (lineHeight * 5) / topWidth;
+
+  const subtitleOffsetForBottom =
+    (Number(addSubtitle || !!subtitle) * (lineHeight * subtitleScale)) / 2;
+
+  const subtitleOffsetY = textBottom
+    ? textOffset + lineHeight / 2
+    : -textOffset + lineHeight / 2;
+
+  const bottomOffsetY = textBottom
+    ? subtitleOffsetForBottom + textOffset + lineHeight / 2
+    : subtitleOffsetForBottom - textOffset + lineHeight / 2;
+
+  const seq = new Sequence({
+    moduleName: game.modules.get(MODULE_ID)?.name,
+    softFail: true,
+  })
+    .sound()
+    .file(`modules/${MODULE_ID}/assets/sfx/region-sting.ogg`)
+    //Top Effect
+    .effect()
+    .file(top)
+    .tint(borderTint)
+    .scale(scale)
+    .duration(duration)
+    .fadeIn(fadeIn, { ease: "easeInCubic" })
+    .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
+    .fadeOut(fadeOut)
+    .screenSpace()
+    .screenSpaceAboveUI()
+    .screenSpaceAnchor(effectAnchor)
+    .screenSpacePosition({ x: 0, y: -textOffset - lineHeight / 2 })
+    .anchor({ x: 0.5, y: 1 })
+    //Top Text
+    .effect()
+    .text(textTop, style)
+    .duration(duration)
+    .fadeIn(fadeIn, { ease: "easeInCubic" })
+    .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
+    .fadeOut(fadeOut)
+    .screenSpace()
+    .screenSpaceAboveUI()
+    .screenSpaceAnchor(effectAnchor)
+    .screenSpacePosition({ x: 0, y: -textOffset })
+    // Bot Effect
+    .effect()
+    .file(bot)
+    .tint(borderTint)
+    .scale(scale)
+    .duration(duration)
+    .fadeIn(fadeIn, { ease: "easeInCubic" })
+    .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
+    .fadeOut(fadeOut)
+    .screenSpace()
+    .screenSpaceAboveUI()
+    .screenSpaceAnchor(effectAnchor)
+    .screenSpacePosition({ x: 0, y: bottomOffsetY })
+    .anchor({ x: 0.5, y: 0 });
+  if (textBottom) {
+    seq
+      .effect()
+      .text(textBottom, style)
+      .duration(duration)
+      .fadeIn(fadeIn, { ease: "easeInCubic" })
+      .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
+      .fadeOut(fadeOut)
+      .screenSpace()
+      .screenSpaceAboveUI()
+      .screenSpaceAnchor(effectAnchor)
+      .screenSpacePosition({ x: 0, y: textOffset });
+  }
+  if (addSubtitle || !!subtitle) {
+    const hours = Math.round(timeTillNightFall());
+    const sub = ` ${game.i18n.format(
+      "bob-addons.animation.location-title.hours-until-night",
+      { hours },
+    )} `;
+    seq
+      .effect()
+      .text(subtitle || sub, subtitleStyle)
+      .duration(duration)
+      .fadeIn(fadeIn, { ease: "easeInCubic" })
+      .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
+      .fadeOut(fadeOut)
+      .screenSpace()
+      .screenSpaceAboveUI()
+      .screenSpaceAnchor(effectAnchor)
+      .screenSpacePosition({ x: 0, y: subtitleOffsetY });
+  }
+  seq.play({ preload: true });
+}
+
+// Random chance for Bastion of Blasphemies to be Blasphemy of Bastions randomly or Bastions of Blasphemies
+function getOptionsHTML(custom) {
   const options = [
     Math.random() <= 0.01
       ? game.i18n.localize(
@@ -107,98 +257,5 @@ export async function locationAnimation({ animScale = 1 }) {
         `<label><input type="radio" name="choice" value="${o}" ${i === 0 ? "checked" : ""}>${o.replace("|", "")}</label>`,
     )
     .join("");
-
-  const data = await foundry.applications.api.DialogV2.input({
-    window: { title: "bob-addons.animation.location-title.title" },
-    content: `${optionsHTML}<input type="text" name="custom">`,
-    ok: {
-      label: "SEQUENCER.SidebarButtons.Play",
-      icon: "fa-solid fa-play",
-    },
-  });
-  const text = data?.choice === custom ? data?.custom : data?.choice;
-
-  const textTop = ` ${text.split("|")?.[0]?.trim()} `;
-  const textBottom = text.split("|")?.[1]
-    ? ` ${text.split("|")?.[1]?.trim()} `
-    : false;
-
-  const style = {
-    fill: "#BDA536",
-    fontFamily: "PopplFrakturCAT",
-    lineJoin: "round",
-    fontSize: 96 * animScale,
-    fontWeight: "bold",
-    strokeThickness: 8,
-  };
-  const textMetrics = PIXI.TextMetrics.measureText(
-    text,
-    new PIXI.TextStyle(style),
-  );
-  const lineHeight = textMetrics.height;
-
-  const textOffset = lineHeight * 0.3;
-
-  const scale = (lineHeight * 5) / topWidth;
-
-  const seq = new Sequence({
-    moduleName: game.modules.get(MODULE_ID)?.name,
-    softFail: true,
-  })
-    .sound()
-    .file(`modules/${MODULE_ID}/assets/sfx/region-sting.ogg`)
-    //Top Effect
-    .effect()
-    .file(top)
-    .tint(borderTint)
-    .scale(scale)
-    .duration(duration)
-    .fadeIn(fadeIn, { ease: "easeInCubic" })
-    .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
-    .fadeOut(fadeOut)
-    .screenSpace()
-    .screenSpaceAboveUI()
-    .screenSpaceAnchor(effectAnchor)
-    .screenSpacePosition({ x: 0, y: -textOffset - lineHeight / 2 })
-    .anchor({ x: 0.5, y: 1 })
-    //Top Text
-    .effect()
-    .text(textTop, style)
-    .duration(duration)
-    .fadeIn(fadeIn, { ease: "easeInCubic" })
-    .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
-    .fadeOut(fadeOut)
-    .screenSpace()
-    .screenSpaceAboveUI()
-    .screenSpaceAnchor(effectAnchor)
-    .screenSpacePosition({ x: 0, y: -textOffset })
-    // Bot Effect
-    .effect()
-    .file(bot)
-    .tint(borderTint)
-    .scale(scale)
-    .duration(duration)
-    .fadeIn(fadeIn, { ease: "easeInCubic" })
-    .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
-    .fadeOut(fadeOut)
-    .screenSpace()
-    .screenSpaceAboveUI()
-    .screenSpaceAnchor(effectAnchor)
-    .screenSpacePosition({ x: 0, y: -textOffset + lineHeight / 2 })
-    .anchor({ x: 0.5, y: 0 });
-  if (textBottom) {
-    seq
-      .screenSpacePosition({ x: 0, y: textOffset + lineHeight / 2 })
-      .effect()
-      .text(textBottom, style)
-      .duration(duration)
-      .fadeIn(fadeIn, { ease: "easeInCubic" })
-      .scaleIn(1.5, fadeIn, { ease: "easeOutCubic" })
-      .fadeOut(fadeOut)
-      .screenSpace()
-      .screenSpaceAboveUI()
-      .screenSpaceAnchor(effectAnchor)
-      .screenSpacePosition({ x: 0, y: textOffset });
-  }
-  seq.play({ preload: true });
+  return optionsHTML;
 }

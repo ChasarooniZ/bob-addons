@@ -1,5 +1,11 @@
 {
   "bob-addons": {
+    "module-settings": {
+      "apply-nightfall-effect": {
+        "name": "Automatically Add Nightfall Effect",
+        "hint": "When this feature is enabled Nightfall effects will automatically be added to each combatant when they enter combat and removed when they exit."
+      }
+    },
     "animation": {
       "location-title": {
         "titles": {
@@ -19,7 +25,9 @@
           "1": "Blasphemies of Bastions",
           "2": "Bastions of Blasphemy"
         },
-        "title": "Choose an area to show the Animation for"
+        "title": "Choose an area to show the Animation for",
+        "hours-until-night": "{hours} Hours until Nightfall",
+        "do-time-to-night": "Show Time to Nightfall Subtitle?"
       }
     }
   }

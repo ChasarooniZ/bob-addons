@@ -2,6 +2,15 @@
 
 # Bastion of Blasphemy: Addons
 
+## Features
+
+- **Automation**
+  - `Automatically Add Nightfall Effect` - when this setting is enabled Nightfall effects will automatically be added to each combatant when they enter combat and removed when they exit
+- **Animations**
+  - `Title Animation` - Opens a menu to allow the user to select from some title options, and then they can play an animation to announce that location
+    - Has a toggle to show hours till nightfall
+    - Also has support support for `|` to split it into two lines, and `/` to add a custom subtitle as any other custom text
+
 ## Quality Settings for Bad PCs
 
 - Turn Graphics to low (10 fps to 30 fps)

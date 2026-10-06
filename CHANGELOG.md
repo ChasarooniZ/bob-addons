@@ -1,3 +1,14 @@
+## 0.2.0
+
+- **New**
+  - Added `Automatically Add Nightfall Effect`
+    - When this setting is enabled Nightfall effects will automatically be added to each combatant when they enter combat and removed when they exit
+- **Update**
+  - `Title Animation`
+    - Fixed localization of `Custom` location title
+    - Added a toggle to automatically add a time till X subtitle
+    - Also added support for `|` to split it into two lines, and `/` to add a custom subtitle as any other custom text
+
 ## 0.1.1
 
 - Included the macro as well
