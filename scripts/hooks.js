@@ -1,6 +1,6 @@
 import { EFFECT } from "./lib/const.js";
 import { isNight } from "./lib/timeHelpers.js";
-import { MODULE_ID } from "./module.js";
+import { MODULE_ID } from "./lib/const.js";
 
 export function setupHooks() {
   if (game.settings.get(MODULE_ID, "apply-nightfall-effect")) {

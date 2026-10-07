@@ -1,3 +1,9 @@
+## 0.3.0
+
+- **New**
+  - Added `Turn Markers`
+    - Includes dialog to automatically set the turn marker the first time you open fvtt after this update
+
 ## 0.2.2
 
 - **Updated**

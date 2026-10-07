@@ -1,3 +1,22 @@
+export const MODULE_ID = "bob-addons";
+
+export const TURN_MARKERS = {
+  STANDARD: {
+    NORMAL: `modules/${MODULE_ID}/assets/combat-markers/bob-marker.webp`,
+    BOSS: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-inverted.webp`,
+  },
+  CIRCLE: {
+    GRID_FIT: {
+      NORMAL: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-grid-fit.webp`,
+      BOSS: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-grid-fit-inverted.webp`,
+    },
+    STANDARD_FIT: {
+      NORMAL: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-standaard-fit.webp`,
+      BOSS: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-standaard-fit-inverted.webp`,
+    },
+  },
+};
+
 export const EFFECT = {
   NIGHTFALL: {
     folder: null,

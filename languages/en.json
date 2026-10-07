@@ -32,6 +32,18 @@
         "do-time-to-night": "Show Time to Nightfall Subtitle?",
         "do-time-to-dawn": "Show Time to Dawn Subtitle?"
       }
+    },
+    "dialog": {
+      "turn-marker": {
+        "title": "Select Bastions of Blasphemy Turn Marker settings",
+        "inputs": {
+          "choice": {
+            "standard": "Standard",
+            "with-circle": "With Circle",
+            "none": "No Turn Marker"
+          }
+        }
+      }
     }
   }
 }

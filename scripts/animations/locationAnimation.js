@@ -4,7 +4,7 @@ import {
   timeTillDawn,
   timeTillNightFall,
 } from "../lib/timeHelpers.js";
-import { MODULE_ID } from "../module.js";
+import { MODULE_ID } from "../lib/const.js";
 
 const effectAnchor = { x: 0.5, y: 0.4 };
 
