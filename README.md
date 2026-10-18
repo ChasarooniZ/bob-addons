@@ -10,6 +10,12 @@
   - `Title Animation` - Opens a menu to allow the user to select from some title options, and then they can play an animation to announce that location
     - Has a toggle to show hours till nightfall
     - Also has support support for `|` to split it into two lines, and `/` to add a custom subtitle as any other custom text
+   
+## Module to Avoid
+_for major game breaking reasons_
+- Pf2e Visioner
+- AA
+- Fast Flip Token Tools
 
 ## Quality Settings for Bad PCs
 
