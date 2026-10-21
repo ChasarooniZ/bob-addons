@@ -10,6 +10,12 @@
   - `Title Animation` - Opens a menu to allow the user to select from some title options, and then they can play an animation to announce that location
     - Has a toggle to show hours till nightfall
     - Also has support support for `|` to split it into two lines, and `/` to add a custom subtitle as any other custom text
+   
+## Module to Avoid
+_for major game breaking reasons_
+- Pf2e Visioner
+- AA
+- Fast Flip Token Tools
 
 ## Quality Settings for Bad PCs
 
@@ -31,6 +37,7 @@
 - [Curse of Strahd OST - Travis Savoie](https://www.youtube.com/playlist?list=PLpV28ONBH95Rwoucn0cyCwJcRM7sNT_G5) - _Chasarooni_ Gothic Horror vibes
 - [Shadows of Barovia](https://www.youtube.com/playlist?list=PLpV28ONBH95RcvBiJFB8OSfyVkyM4uZ2) - _Chasarooni_
 - [Claws of the Tyrant](https://www.youtube.com/watch?v=LM3V4VIFJeU&list=OLAK5uy_kgwv5cVye1Z5Fn94Rx8rLdZlYGsPR90S4) - _IanKid_ - Maybe usable as it takes place nearby
+- [Darkest Dungeon II](https://www.youtube.com/playlist?list=PLDf1VKbD7cPbme9r920FeM5tmVWAc9VxG) - _Myth-Speaker Hater_ Combat music here goes hard
 
 ### Landing Page
 
