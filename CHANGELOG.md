@@ -1,3 +1,8 @@
+## 0.4.1
+
+- **Updated**
+  - Fixed spelling error causing the the add `Turn Marker` dialog to fail in some cases
+
 ## 0.4.0
 
 - **New**

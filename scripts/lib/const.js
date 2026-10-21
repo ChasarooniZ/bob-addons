@@ -11,8 +11,8 @@ export const TURN_MARKERS = {
       BOSS: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-grid-fit-inverted.webp`,
     },
     STANDARD_FIT: {
-      NORMAL: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-standaard-fit.webp`,
-      BOSS: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-standaard-fit-inverted.webp`,
+      NORMAL: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-standard-fit.webp`,
+      BOSS: `modules/${MODULE_ID}/assets/combat-markers/bob-marker-circle-standard-fit-inverted.webp`,
     },
   },
 };
