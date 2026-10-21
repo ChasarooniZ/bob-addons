@@ -18,4 +18,13 @@ export function setupSettings() {
     default: false,
     type: Boolean,
   });
+
+  game.settings.register(MODULE_ID, "config.asked-dynamic-ring", {
+    name: `${MODULE_ID}.module-settings.config.asked-dynamic-ring.name`,
+    hint: `${MODULE_ID}.module-settings.config.asked-dynamic-ring.hint`,
+    scope: "world",
+    config: false,
+    default: false,
+    type: Boolean,
+  });
 }

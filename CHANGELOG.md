@@ -1,3 +1,9 @@
+## 0.4.0
+
+- **New**
+  - Added `Dynamic Token Ring` _made by @Zapperroni_
+  - Also adds a prompt the first time you open foundry to set your ring to this ring
+
 ## 0.3.0
 
 - **New**

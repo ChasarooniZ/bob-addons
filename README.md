@@ -63,6 +63,10 @@
 
 - Hollow Knight Bob Bot/Top - Created by @Chasarooni, License, Creative Commons with Attribution
 
+### Dynamic Ring
+
+- Dynamic Ring was made by @Zapperroni and all rights are reserved
+
 ### CUP
 
 Thhis module uses trademarks and/or copyrights owned by

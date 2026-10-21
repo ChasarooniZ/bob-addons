@@ -43,6 +43,10 @@
             "none": "No Turn Marker"
           }
         }
+      },
+      "dynamic-ring": {
+        "title": "Enable Dynamic Ring",
+        "content": "Would you like to set your dynamic token ring to the Bastion of Blasphemies: Addons Token Ring, and reload foundry to apply it?  (made by @Zapperroni)"
       }
     }
   }
